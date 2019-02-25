@@ -1,11 +1,11 @@
 function setValue (name, value) {
-	var node = document.getElementById(`value-${name}`)
+	var node = document.getElementById('value-'+name)
 	node.textContent = value
 }
 
 function setProgress (name, ratio) {
-	node = document.getElementById(`progress-${name}`)
-	node.style.strokeDashoffset = (1 - ratio) * 6.28 * 50
+	node = document.getElementById('progress-'+name)
+	node.setAttribute('stroke-dashoffset', (1 - ratio) * 6.28 * 50)
 }
 
 function step (timestamp) {

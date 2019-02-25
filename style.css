@@ -23,31 +23,22 @@ body {
 
 #timer svg .value {
 	font-size: 1.5em;
-	transform: translate(50%, 50%);
 }
 
 #timer svg .unit {
 	font-size: .75em;
-	transform: translate(50%, 65%);
 }
 
 #timer svg circle {
-	r: 50px;
-	cx: 50%;
-	cy: 50%;
 	fill: none;
 }
 
 #timer svg .progress {
-	stroke-width: 5px;
-	stroke-dasharray: calc(6.28*50px);
 	stroke: #f6fffe;
-	transform: rotateZ(-90deg);
-	transform-origin: 50% 50%;
+	stroke-width: 5px;
 }
 
 #timer svg .background {
-	stroke-width: 2px;
 	stroke: #bbb;
-}}
+	stroke-width: 2px;
 }
