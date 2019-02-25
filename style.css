@@ -14,7 +14,7 @@ body {
 #timer svg {
 	width: 110px;
 	height: 110px;
-	fill: white;
+	fill: #f6fffe;
 }
 
 #timer svg text {
@@ -41,7 +41,7 @@ body {
 #timer svg .progress {
 	stroke-width: 5px;
 	stroke-dasharray: calc(6.28*50px);
-	stroke: #fff;
+	stroke: #f6fffe;
 	transform: rotateZ(-90deg);
 	transform-origin: 50% 50%;
 }
