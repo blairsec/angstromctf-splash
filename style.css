@@ -6,3 +6,48 @@ body {
 body {
     font-family: 'Noto Sans', sans-serif;
 }
+
+#timer {
+	text-align: center;
+}
+
+#timer svg {
+	width: 110px;
+	height: 110px;
+	fill: white;
+}
+
+#timer svg text {
+	text-anchor: middle;
+}
+
+#timer svg .value {
+	font-size: 1.5em;
+	transform: translate(50%, 50%);
+}
+
+#timer svg .unit {
+	font-size: .75em;
+	transform: translate(50%, 65%);
+}
+
+#timer svg circle {
+	r: 50px;
+	cx: 50%;
+	cy: 50%;
+	fill: none;
+}
+
+#timer svg .progress {
+	stroke-width: 5px;
+	stroke-dasharray: calc(6.28*50px);
+	stroke: #fff;
+	transform: rotateZ(-90deg);
+	transform-origin: 50% 50%;
+}
+
+#timer svg .background {
+	stroke-width: 2px;
+	stroke: #bbb;
+}}
+}
