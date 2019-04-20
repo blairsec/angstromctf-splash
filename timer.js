@@ -12,6 +12,7 @@ function step (timestamp) {
 	var present = new Date()
 	var competition = Date.parse("2019-04-19T20:00:00.000-04:00")
 	var delta = (competition - present) / 1000
+	delta = delta > 0 ? delta : 0
 	setValue('day', Math.floor(delta / 86400))
 	setProgress('day', delta / 31536000)
 	delta = delta % 86400
