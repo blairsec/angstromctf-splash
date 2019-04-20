@@ -10,7 +10,7 @@ function setProgress (name, ratio) {
 
 function step (timestamp) {
 	var present = new Date()
-	var competition = Date.parse("2019-04-25T20:00:00.000-04:00")
+	var competition = Date.parse("2019-04-24T20:00:00.000-04:00")
 	var delta = (competition - present) / 1000
 	delta = delta > 0 ? delta : 0
 	setValue('day', Math.floor(delta / 86400))
