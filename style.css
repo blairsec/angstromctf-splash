@@ -1,5 +1,5 @@
 body:before {
-	background: url(bg.svg), radial-gradient(ellipse at bottom left, #222, transparent), radial-gradient(ellipse at bottom right, #222, transparent), black;
+	background: url(bg.svg), radial-gradient(ellipse at bottom left, #0f1f33, transparent), radial-gradient(ellipse at bottom right, #0f1f33, transparent), black;
 	background-size: cover;
 	background-position: center center;
 	position: fixed;
@@ -9,6 +9,14 @@ body:before {
 	left: 0;
 	content: "";
 	z-index: -1;
+}
+
+.white {
+	color: #f0f0f0;
+}
+
+div.ba {
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
