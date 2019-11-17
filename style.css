@@ -1,5 +1,6 @@
 body:before {
-	background: url(bg.svg), radial-gradient(ellipse at bottom left, #0f1f33, transparent), radial-gradient(ellipse at bottom right, #0f1f33, transparent), black;
+	background: url(bg.jpg);
+	opacity: 0.45;
 	background-size: cover;
 	background-position: center center;
 	position: fixed;
@@ -11,18 +12,28 @@ body:before {
 	z-index: -1;
 }
 
-.white {
-	color: #f0f0f0;
-}
-
 div.ba {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
     font-family: 'Noto Sans', sans-serif;
+    background-color: #000000;
 }
 
+.sponsors {
+	width: calc(100% + 4rem);
+	position: relative;
+	right: 2rem;
+	display: flex;
+	padding: 2rem 0 3rem; 0;
+	justify-content: space-evenly;
+	space-between: 1rem;
+}
+
+.sponsor {
+	width: 30%;
+}
 
 #timer {
 	text-align: center;
