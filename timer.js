@@ -20,14 +20,14 @@ function step (timestamp) {
 	var delta;
 	
 	var competitionStart = Date.parse("2020-03-13T20:00:00.000-04:00"),
-		competitionEnd = Date.parse("2021-03-18T20:00:00.000-04:00")
+		competitionEnd = Date.parse("2020-03-18T20:00:00.000-04:00")
 	
 	
 	if (competitionEnd - present < 0){
 		// actf ended
 		document.getElementById("timer").remove()
 		
-		setClass("value-notes", "dib mb4")
+		setClass("push", "dib mb3")
 		
 		return
 		
@@ -35,15 +35,9 @@ function step (timestamp) {
 		// actf is going on
 		delta = (competitionEnd - present) / 1000
 		
-		setClass("value-notes", "f3 center tc pb1 dib w-100 mb2 mt0");
-		setValue("notes", "remaining!");
-		
 	} else {
 		// actf has not started
 		delta = (competitionStart - present) / 1000
-		
-		setClass("value-notes", "f3 center tc pb1 dib w-100 mb2 mt0");
-		setValue("notes", "until we start!");
 	}
 	
 	delta = delta > 0 ? delta : 0
