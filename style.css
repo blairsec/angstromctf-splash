@@ -1,6 +1,5 @@
 body:before {
-	background: url(bg.jpg);
-	opacity: 0.45;
+	background: radial-gradient(ellipse at bottom,#940800 0,#000000 90%, #000000 100%);
 	background-size: cover;
 	background-position: center center;
 	position: fixed;
