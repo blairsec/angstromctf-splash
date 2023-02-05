@@ -7,80 +7,220 @@
 		<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 	</head>
 	<body class="pa3 pt1">
-		<h1 class="f1 white center mw7" style="margin-bottom: 0.5rem;">ångstromCTF</h1>
-		<p class="f4 white center mw7">A cybersecurity competition for high schoolers.</p>
-		<div class="ba pb4 pt3 center mw7 white mv4">
-			<div class="tc mv4">
-				<h3 class="f2 mb3">April 29 to May 4</h3>
-				<div class="f3">8 PM EDT</div>
-			</div>
-			<div class="center tc"><a class="f4 black bg-white no-underline dim br2 pv2 ph3" href="https://2022.angstromctf.com">Register now!</a></div>
-			<div id="timer" class="flex flex-wrap justify-center ph4 mv4">
-				<div class="flex">
-					<svg class="pa1">
-						<circle class="background" r="50" cx="50%" cy="50%"></circle>
-						<circle id="progress-day" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)" stroke-dasharray="314"></circle>
-						<text id="value-day" class="value" x="50%" y="50%"></text>
-						<text class="unit" x="50%" y="65%">DAYS</text>
-					</svg>
-					<svg class="pa1">
-						<circle class="background" r="50" cx="50%" cy="50%"></circle>
-						<circle id="progress-hour" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)" stroke-dasharray="314"></circle>
-						<text id="value-hour" class="value" x="50%" y="50%"></text>
-						<text class="unit" x="50%" y="65%">HOURS</text>
-					</svg>
+		<div id="app">
+			<background></background>
+			<h1 class="f1 white center mw7" style="margin-bottom: 0.5rem;">ångstromCTF</h1>
+			<p class="f4 white center mw7">A cybersecurity competition for high schoolers.</p>
+			<div class="ba pb4 pt3 center mw7 white mv4">
+				<div class="tc mv4">
+					<h3 class="f2 mb3">April 29 to May 4</h3>
+					<div class="f3">8 PM EDT</div>
 				</div>
-				<div class="flex">
-					<svg class="pa1">
-						<circle class="background" r="50" cx="50%" cy="50%"></circle>
-						<circle id="progress-minute" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)" stroke-dasharray="314"></circle>
-						<text id="value-minute" class="value" x="50%" y="50%"></text>
-						<text class="unit" x="50%" y="65%">MINUTES</text>
-					</svg>
-					<svg class="pa1">
-						<circle class="background" r="50" cx="50%" cy="50%"></circle>
-						<circle id="progress-second" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)" stroke-dasharray="314"></circle>
-						<text id="value-second" class="value" x="50%" y="50%"></text>
-						<text class="unit" x="50%" y="65%">SECONDS</text>
-					</svg>
+				<div class="center tc"><a class="f4 black bg-white no-underline dim br2 pv2 ph3"
+						href="https://2022.angstromctf.com">Register now!</a></div>
+				<div id="timer" class="flex flex-wrap justify-center ph4 mv4">
+					<div class="flex">
+						<svg class="pa1">
+							<circle class="background" r="50" cx="50%" cy="50%"></circle>
+							<circle id="progress-day" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)"
+								stroke-dasharray="314"></circle>
+							<text id="value-day" class="value" x="50%" y="50%"></text>
+							<text class="unit" x="50%" y="65%">DAYS</text>
+						</svg>
+						<svg class="pa1">
+							<circle class="background" r="50" cx="50%" cy="50%"></circle>
+							<circle id="progress-hour" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)"
+								stroke-dasharray="314"></circle>
+							<text id="value-hour" class="value" x="50%" y="50%"></text>
+							<text class="unit" x="50%" y="65%">HOURS</text>
+						</svg>
+					</div>
+					<div class="flex">
+						<svg class="pa1">
+							<circle class="background" r="50" cx="50%" cy="50%"></circle>
+							<circle id="progress-minute" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)"
+								stroke-dasharray="314"></circle>
+							<text id="value-minute" class="value" x="50%" y="50%"></text>
+							<text class="unit" x="50%" y="65%">MINUTES</text>
+						</svg>
+						<svg class="pa1">
+							<circle class="background" r="50" cx="50%" cy="50%"></circle>
+							<circle id="progress-second" class="progress" r="50" cx="50%" cy="50%" transform="rotate(-90 55 55)"
+								stroke-dasharray="314"></circle>
+							<text id="value-second" class="value" x="50%" y="50%"></text>
+							<text class="unit" x="50%" y="65%">SECONDS</text>
+						</svg>
+					</div>
+				</div>
+				<p class="f4 center tc pb1">Past years:</p>
+				<div class="center tc pb4 flex flex-wrap justify-center">
+					<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2021.angstromctf.com">2021</a>
+					<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2020.angstromctf.com">2020</a>
+					<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2019.angstromctf.com">2019</a>
+					<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2018.angstromctf.com">2018</a>
+					<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2017.angstromctf.com">2017</a>
+					<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="#">2016</a>
 				</div>
 			</div>
-			<p class="f4 center tc pb1">Past years:</p>
-			<div class="center tc pb4 flex flex-wrap justify-center">
-				<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2021.angstromctf.com">2021</a>
-				<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2020.angstromctf.com">2020</a>
-				<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2019.angstromctf.com">2019</a>
-				<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2018.angstromctf.com">2018</a>
-				<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="https://2017.angstromctf.com">2017</a>
-				<a class="f4 white b--solid bw1 no-underline dim br2 pv2 ph3 ma1" href="#">2016</a>
+			<div class="ba ph4 center mw7 pt1 pb4 mv4 white">
+				<h3 class="f2">Sponsors</h3>
+				<div class="sponsors pb3">
+					<a target="_blank" href="https://aws.amazon.com" class="sponsor"><img title="Amazon Web Services"
+							alt="Amazon Web Services" src="/aws.svg"></a>
+					<a target="_blank" href="https://www.trailofbits.com" class="sponsor"><img title="Trail of Bits"
+							alt="Trail of Bits" src="/trailofbits.png"></a>
+				</div>
+				<div class="sponsors pb3">
+					<a target="_blank" href="https://binary.ninja" class="sponsor"><img title="Binary Ninja" alt="Binary Ninja"
+							src="/binja.svg" height="170"></a>
+					<a target="_blank" href="https://osec.io" class="sponsor"><img title="OtterSec" alt="OtterSec" src="/osec.png"
+							height="170"></a>
+				</div>
+				<p class="f4">Infrastructure sponsored by <a target="_blank"
+						href="https://goo.gle/ctfsponsorship">goo.gle/ctfsponsorship</a>.</p>
+				<p class="f4 i">Interested in sponsoring? Email us at angstromctf@pm.me.</p>
+			</div>
+			<div class="ba ph4 center mw7 pt1 pb4 mb3 white">
+				<h3 class="f2">FAQ</h3>
+				<p class="f3 i">What is a CTF?</p>
+				<p class="f5 lh-copy">A CTF, or Capture the Flag, is an online cybersecurity competition where players work in teams
+					to solve as many challenges as possible. Challenges are services or files that you must investigate and exploit
+					in order to obtain a string called the &ldquo;flag&rdquo;, which is submitted for points.</p>
+				<p class="f3 i">Who are you?</p>
+				<p class="f5 lh-copy">ångstromCTF is run by a team of students from Montgomery Blair High School. Now in our 6th
+					year, we are one of the largest high school-oriented CTFs, with over 1700 competing teams in 2020. To see who
+					helped out with each competition, check the individual competition sites.</p>
+				<p class="f3 i">What if I've never done anything like this before?</p>
+				<p class="f5 lh-copy">Then ångstromCTF is a great place to start! Our challenges are meant to guide students and
+					help them develop their skills, even if they start off as a complete beginner. To get an idea for what the
+					challenges will be like, be sure to try out the challenges from previous years.</p>
+				<p class="f3 i">I'm not a high schooler. Can I still compete?</p>
+				<p class="f5 lh-copy">Yup! You'll simply need to mark yourself as ineligible for prizes when signing up. Ineligible
+					players will still be able to view challenges, submit flags, and see how they rank compared to other teams.</p>
 			</div>
 		</div>
-		<div class="ba ph4 center mw7 pt1 pb4 mv4 white">
-			<h3 class="f2">Sponsors</h3>
-			<div class="sponsors pb3">
-				<a target="_blank" href="https://aws.amazon.com" class="sponsor"><img title="Amazon Web Services" alt="Amazon Web Services" src="/aws.svg"></a>
-				<a target="_blank" href="https://www.trailofbits.com" class="sponsor"><img title="Trail of Bits" alt="Trail of Bits" src="/trailofbits.png"></a>
-			</div>
-			<div class="sponsors pb3">
-				<a target="_blank" href="https://binary.ninja" class="sponsor"><img title="Binary Ninja" alt="Binary Ninja" src="/binja.svg" height="170"></a>
-				<a target="_blank" href="https://osec.io" class="sponsor"><img title="OtterSec" alt="OtterSec" src="/osec.png" height="170"></a>
-			</div>
-			<p class="f4">Infrastructure sponsored by <a target="_blank" href="https://goo.gle/ctfsponsorship">goo.gle/ctfsponsorship</a>.</p>
-			<p class="f4 i">Interested in sponsoring? Email us at angstromctf@pm.me.</p>
-		</div>
-		<div class="ba ph4 center mw7 pt1 pb4 mb3 white">
-			<h3 class="f2">FAQ</h3>
-			<p class="f3 i">What is a CTF?</p>
-			<p class="f5 lh-copy">A CTF, or Capture the Flag, is an online cybersecurity competition where players work in teams to solve as many challenges as possible. Challenges are services or files that you must investigate and exploit in order to obtain a string called the &ldquo;flag&rdquo;, which is submitted for points.</p>
-			<p class="f3 i">Who are you?</p>
-			<p class="f5 lh-copy">ångstromCTF is run by a team of students from Montgomery Blair High School. Now in our 6th year, we are one of the largest high school-oriented CTFs, with over 1700 competing teams in 2020. To see who helped out with each competition, check the individual competition sites.</p>
-			<p class="f3 i">What if I've never done anything like this before?</p>
-			<p class="f5 lh-copy">Then ångstromCTF is a great place to start! Our challenges are meant to guide students and help them develop their skills, even if they start off as a complete beginner. To get an idea for what the challenges will be like, be sure to try out the challenges from previous years.</p>
-			<p class="f3 i">I'm not a high schooler. Can I still compete?</p>
-			<p class="f5 lh-copy">Yup! You'll simply need to mark yourself as ineligible for prizes when signing up. Ineligible players will still be able to view challenges, submit flags, and see how they rank compared to other teams.</p>
-		</div>
+		
+		<script>
+			const colors = {
+				primary: "#940800",
+				secondary: "#9e9493"
+			}
+
+			// from https://gist.github.com/mjackson/5311256
+			function rgbToHsl(r, g, b) {
+				r /= 255
+				g /= 255
+				b /= 255
+
+				var max = Math.max(r, g, b)
+				var min = Math.min(r, g, b)
+				var h = (max + min) / 2
+				var s = (max + min) / 2
+				var l = (max + min) / 2
+
+				if (max === min) {
+					h = s = 0 // achromatic
+				} else {
+					var d = max - min
+					s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
+
+					switch (max) {
+						case r: h = (g - b) / d + (g < b ? 6 : 0); break
+						case g: h = (b - r) / d + 2; break
+						case b: h = (r - g) / d + 4; break
+					}
+
+					h /= 6
+				}
+
+				return [h, s, l]
+			}
+
+			const Background = {
+				name: 'Background',
+				template:
+					`<canvas ref="canvas"></canvas>`,
+				methods: {
+					gaussian() {
+						let sum = 0
+						for (let i = 0; i < 10; i++) {
+							sum += Math.random()
+						}
+						return (sum - 5) / 5
+					},
+					genStars(numStars) {
+						var currStarCount = this.stars.length
+						var newStarCount = Math.min(Math.floor(this.STARS * numStars), 1500)
+						if (newStarCount === currStarCount) {
+						} else if (newStarCount > this.stars.length) {
+							for (let i = currStarCount; i < newStarCount; i++) {
+								let d = Math.pow(Math.abs(this.gaussian()) + 1, 3)
+								this.stars[i] = {
+									x: Math.random(),
+									y: Math.random(),
+									r: 4 / d,
+									vx: this.BASE_SPEED * this.gaussian(),
+									vy: -this.BASE_SPEED * (4 / d),
+									h: [rgbToHsl(parseInt(colors.primary.slice(1, 3), 16), parseInt(colors.primary.slice(3, 5), 16), parseInt(colors.primary.slice(5, 7), 16))[0] * 360, rgbToHsl(parseInt(colors.secondary.slice(1, 3), 16), parseInt(colors.secondary.slice(3, 5), 16), parseInt(colors.secondary.slice(5, 7), 16))[0] * 360][Math.floor(Math.random() * 2)] + this.gaussian() * 50
+								}
+							}
+						} else {
+							this.stars = this.stars.slice(0, newStarCount)
+						}
+					},
+					tick(canvas) {
+						var yCons = 1300 / canvas.height
+						for (let i = 0; i < this.stars.length; i++) {
+							this.stars[i].x += this.stars[i].vx + this.gaussian() * this.BASE_SPEED
+							this.stars[i].y += (this.stars[i].vy + this.gaussian() * this.BASE_SPEED * 2) * yCons
+
+							if (this.stars[i].x < 0) this.stars[i].x += 1
+							if (this.stars[i].x > 1) this.stars[i].x -= 1
+							if (this.stars[i].y < 0) this.stars[i].y += 1
+							if (this.stars[i].y > 1) this.stars[i].y -= 1
+						}
+					},
+					resize(canvas) {
+						canvas.width = window.innerWidth
+						canvas.height = window.innerHeight
+					},
+					setup(canvas, ctx) {
+						this.resize(canvas)
+						this.repaint(canvas, ctx)
+						window.setInterval(() => { this.tick(canvas); this.resize(canvas); this.repaint(canvas, ctx); this.genStars(canvas.height / 1000) }, 50)
+					},
+					repaint(canvas, ctx) {
+						ctx.clearRect(0, 0, canvas.width, canvas.height)
+						for (let i = 0; i < this.stars.length; i++) {
+							ctx.fillStyle = 'hsl(' + this.stars[i].h + ',100%,60%)'
+							ctx.beginPath()
+							ctx.arc(this.stars[i].x * canvas.width, this.stars[i].y * canvas.height, this.stars[i].r, 0, 2 * Math.PI, false)
+							ctx.fill()
+						}
+					}
+				},
+				data() {
+					return {
+						STARS: 50,
+						BASE_SPEED: 0.0002,
+						stars: []
+					}
+				},
+				mounted() {
+					this.setup(this.$refs.canvas, this.$refs.canvas.getContext('2d'))
+				}
+			}
+
+			const app = Vue.createApp({})
+
+			app.component('background', Background)
+
+			app.mount("#app")
+		</script>
 		<script src="timer.js"></script>
 	</body>
 </html>
