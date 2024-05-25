@@ -1,5 +1,5 @@
 body:before {
-	background: linear-gradient(90deg, #b45b64, #b14e58 50%, #b97072);
+	background: linear-gradient(#3838b0, #4d3a91 50%, #3838b0);
 	position: fixed;
 	height: 100%;
 	width: 100%;
